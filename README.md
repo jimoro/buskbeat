@@ -1,4 +1,6 @@
-# README
+## buskbeat: A community for buskers and music lovers to share performances, tips, discussions and feedback.
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
