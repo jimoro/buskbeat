@@ -16,15 +16,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
   </head>
 
   <body>
 
-    <!-- notice & alert added per Devise gem installation example, with the instruction: "Ensure you have flash messages in app/views/layouts/application.html.erb."  -->
+    <!-- notice & alert added per Devise gem installation example, with the instruction: "Ensure you have flash messages in app/views/layouts/application.html.erb."
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>   -->
 
-    <%= yield %>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", welcome_about_path %></li>
+        <li><%= link_to "FAQ", welcome_faq_path %></li>
+      </ul>
+
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>
