@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'welcome/faq'
 
+  get 'welcome/why'
+
 end
 
 
