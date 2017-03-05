@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Buskbeat</title>
+    <title>Busker's Beat | From the street to your ears</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -27,10 +27,10 @@
 
     <div class="container">
       <ul class="nav nav-tabs">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", welcome_about_path %></li>
-        <li><%= link_to "FAQ", welcome_faq_path %></li>
-        <li><%= link_to "Why register?", welcome_why_path %></li>
+        <li><%= link_to "Busker's Beat", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
+        <li><%= link_to "Why register?", why_path %></li>
       </ul>
 
       <%= yield %>
