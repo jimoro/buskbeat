@@ -2,21 +2,31 @@
   <h1>Welcome to Busker's Beat!</h1>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-center" style="border-style: solid">
       <h2>Sign In</h2>
       <p>Placeholder for log in form</p>
-      <h2> or Sign Up</h2>
+      <h3>or</h3>
+      <h2>Sign Up</h2>
       <p>Placeholder for register form</p>
     </div>
     <div class="col-md-8">
       <h2>Featured Videos</h2>
-      <p>A few of our favorite videos. Browse artists for more!</p>
+      <p>Browse artists for more!</p>
+      <p><em>Embedded YouTube video test.</em></p>
+      <iframe width="420" height="345" src="https://www.youtube.com/embed/8ZM3jvlvgVw">
+      </iframe>
+
       <h2>Featured Audio Tracks</h2>
+      <p><em>Embedded SoundCloud audio track test</em></p>
       <p>Browse artists and Subscribe to our podcast for more!</p>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/34019569&amp;color=0066cc"></iframe>
+
       <h2>Most Recent Posts</h2>
       <p>Browse the most recent messages from buskers and join the conversation</p>
+
       <h2><%= link_to "All Posts", posts_path %></h2>
       <p>Browse all messages from buskers and comments from the community</p>
+
     </div>
   </div>
 
