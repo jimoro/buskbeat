@@ -1,0 +1,36 @@
+<h1>Edit Topic</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidelines for topics:</p>
+    <ul>
+      <li>Make sure it doesn't fall within the scope of an existing Topic</li>
+      <li>Make sure it <em>does</em> fall within the Busker's Beat community scope</li>
+      <li>Consider if there seems to be enough community interest to generate active participation, keeping the topic from growing stale</li>
+      <ul>
+        <li>Better to delay creating a topic until there is clearly a strong interest than to have to prune a slow topic later</li>
+      </ul>
+      <li>Make the Topic name and description define the intended use as clearly as possible</li>
+      <li>Be ready to make a few posts to the new Topic right away to give members good examples of what the Topic is for</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @topic do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter new Topic name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: "Enter new Topic description" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :public, class: 'checkbox' do %>
+          <%= f.check_box :public %> Public topic (uncheck for Private topics)
+        <% end %>
+      </div>
+      <%= f.submit "Save Changes", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+  
