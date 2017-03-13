@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+  get 'profiles/new'
+
+  devise_for :users, :controllers => {
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    :registrations => 'users/registrations'
+  }
+
+  resources :users, only: [] do
+    resource :profile, only: [:create, :new, :update, :edit, :show]
+  end
 
   resources :topics do
     resources :posts, except: [:index]  # This succinct syntax (prior to refactoring to nest under 'topics' and exclude 'index') replaces the four lines below and creates post CRUD routes for creating, updating, viewing, and deleting instances of Post.
