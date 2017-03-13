@@ -21,12 +21,32 @@
 
   <body>
 
-    <!-- notice & alert added per Devise gem installation example, with the instruction: "Ensure you have flash messages in app/views/layouts/application.html.erb."
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>   -->
+    <!-- Facebook app setup -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1277458452337879',
+          xfbml      : true,
+          version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+<!-- notice & alert added per Devise gem installation example, with the instruction: "Ensure you have flash messages in app/views/layouts/application.html.erb." -->
+<!-- <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>   -->
 
     <div class="container">
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs" style="font-family: BOOTLE, src: url(/assets/fonts/BOOTLE__.TTF);">
         <li><%= link_to "Busker's Beat", root_path %></li>
         <li><%= link_to "Discussions", topics_path %></li>
         <li><%= link_to "About", about_path %></li>
