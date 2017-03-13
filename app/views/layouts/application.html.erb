@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Busker's Beat | From the street to your ears</title>
+    <title>Busker's Beat | Street Music</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -46,8 +46,8 @@
      <p class="alert"><%= alert %></p>   -->
 
     <div class="container">
-      <ul class="nav nav-tabs" style="font-family: BOOTLE, src: url(/assets/fonts/BOOTLE__.TTF);">
-        <li><%= link_to "Busker's Beat", root_path %></li>
+      <ul class="nav nav-tabs">
+        <li style="font-family:BOOTLE, src:url(/assets/fonts/BOOTLE__.TTF);"><%= link_to "Busker's Beat", root_path %></li>
         <li><%= link_to "Discussions", topics_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "FAQ", faq_path %></li>
