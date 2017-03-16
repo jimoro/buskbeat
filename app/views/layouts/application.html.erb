@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Busker's Beat | Street Music</title>
+    <title>Buskers Beat | Street Music</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -51,7 +51,12 @@
         <li><%= link_to "Discussions", topics_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "FAQ", faq_path %></li>
-        <li><%= link_to "Why register?", why_path %></li>
+        <% if user_signed_in? %>
+          <li class='pull-right'><%= link_to 'Sign out', destroy_user_session_path, class: 'pull-right' %></li>
+        <% else %>
+          <li class='pull-right'><%= link_to 'Sign In/Sign Up', new_user_session_path, class: 'pull-right' %></li>
+          <li class='pull-right'><%= link_to "Why register?", why_path %></li>
+        <% end %>
       </ul>
 
       <% if flash[:notice] %>
