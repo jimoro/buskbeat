@@ -53,9 +53,11 @@
         <li><%= link_to "FAQ", faq_path %></li>
         <% if user_signed_in? %>
           <li class='pull-right'><%= link_to 'Sign out', destroy_user_session_path, class: 'pull-right' %></li>
+          <li class='pull-right'><div class="user-info"><strong><%= current_user.name %></strong></div></li>          
         <% else %>
-          <li class='pull-right'><%= link_to 'Sign In/Sign Up', new_user_session_path, class: 'pull-right' %></li>
           <li class='pull-right'><%= link_to "Why register?", why_path %></li>
+          <li class='pull-right'><%= link_to 'Register', new_user_registration_path, class: 'pull-right' %></li>
+          <li class='pull-right'><%= link_to 'Sign In', new_user_session_path, class: 'pull-right' %></li>
         <% end %>
       </ul>
 
