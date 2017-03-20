@@ -1,10 +1,14 @@
 class User < ApplicationRecord
+  after_create :create_profile   # testing per https://gorails.com/forum/user-profile-with-devise
   has_many :posts
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+
+  has_one :profile
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
