@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%= form_for user_profile_path(current_user, @profile) do |f| %>
+    <%= form_for [current_user, @profile], url: user_profile_path do |f| %>
 
       <div class="form-group">
         <div class="field">
@@ -20,14 +20,14 @@
       <div class="form-group">
         <div class="field">
           <%= f.label :lat %>
-          <%= f.number_field :lat %>
+          <%= f.number_field :lat, class: :text_field, step: :any, placeholder: "Enter latitude" %>
         </div>
       </div>
 
       <div class="form-group">
         <div class="field">
           <%= f.label :lng %>
-          <%= f.number_field :lng %>
+          <%= f.number_field :lng, class: :text_field, step: :any, placeholder: "Enter longitude" %>
         </div>
       </div>
 
