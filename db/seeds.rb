@@ -40,7 +40,7 @@ end
 
 user = User.first
 user.update_attributes!(
-  name: 'jimrohrer'
+  name: 'jimrohrer',
   email: 'jim.rohrer@gmail.com',
   password: 'helloworld'
 )
@@ -50,12 +50,3 @@ puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
-
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)

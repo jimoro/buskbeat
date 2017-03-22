@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320005541) do
+ActiveRecord::Schema.define(version: 20170321013758) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170320005541) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+    t.index ["user_id"], name: "unique_user_profile", unique: true
   end
 
   create_table "topics", force: :cascade do |t|

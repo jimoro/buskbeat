@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.0.1'
+gem 'rails'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -22,8 +22,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '~> 3.3.6'
-# gem 'bootstrap', '~> 4.0.0.alpha6'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
