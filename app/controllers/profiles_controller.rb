@@ -32,4 +32,20 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
   end
 
+  def update
+    @profile = current_user.profile
+    @profile.act = params[:profile][:act]
+    @profile.bio = params[:profile][:bio]
+    @profile.lat = params[:profile][:lat]
+    @profile.lng = params[:profile][:lng]
+
+    if @profile.save
+      flash[:notice] = "Profile update for '#{current_user[:name]}' was saved."
+      redirect_to user_profile_path
+    else
+      flash.now[:alert] = "Oops, it looks like there was an error updating your profile. Please try again."
+      render :edit
+    end
+  end
+
 end

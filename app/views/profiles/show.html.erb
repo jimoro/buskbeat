@@ -21,8 +21,21 @@
       </div>
     </div>
 
-    <p>Where to find '<%= @profile.act %>'</p>
-    <em>Geolocation placeholder</em>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Where to find '<%= @profile.act %>'</h3>
+      </div>
+      <div class="panel-body">
+        <p><em>Latitude:</em> <%= current_user[:lat].to_s %></p>
+        <%= puts "Latitude for #{current_user[:name]} is #{current_user[:lat]}" %>
+        <p><em>Longitude:</em> <%= current_user[:lng].to_s %></p>
+        <%= puts "Longitude for #{current_user[:name]} is #{current_user[:lng]}" %>
+      </div>
+    </div>
 
+  </div>
+
+  <div class="col-md-6">
+    <%= link_to "Edit Profile", edit_user_profile_path(current_user), class: 'btn btn-success' %>
   </div>
 </div>
