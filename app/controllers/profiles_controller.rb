@@ -41,6 +41,8 @@ class ProfilesController < ApplicationController
     @profile.lat = params[:profile][:lat]
     @profile.lng = params[:profile][:lng]
 
+    @profile.avatar = params[:profile][:avatar]
+
     if @profile.save
       flash[:notice] = "Profile update for '#{current_user[:name]}' was saved."
       redirect_to user_profile_path
