@@ -20,6 +20,8 @@ class ProfilesController < ApplicationController
     @profile.lat = params[:profile][:lat]
     @profile.lng = params[:profile][:lng]
 
+    @profile.avatar = params[:profile][:avatar]
+
     if @profile.save
       redirect_to user_profile_path(current_user), notice: "Profile for '#{current_user.name}' was saved successfully."
     else
