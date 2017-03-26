@@ -1,18 +1,22 @@
-<h2>Your Buskers Beat Profile</h2>
+<h2><%= @profile.act %></h2>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
 
     <% if current_user.profile.avatar.file? %>
       <%= image_tag current_user.profile.avatar.url(:medium) %>
     <% else %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Edit your profile to add your profile image</h3>
+          <!-- <h3 class="panel-title">Add an Image to your Profile</h3> -->
+          <%= link_to "TIP: Post an image to add interest to your profile. 'Edit Profile' to upload an image now.", edit_user_profile_path(current_user), class: 'panel-title' %>
         </div>
       </div>
     <% end %>
+    <p></p>
+  </div>
 
+  <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Act / Busking Name</h3>
@@ -45,7 +49,7 @@
 
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-2">
     <%= link_to "Edit Profile", edit_user_profile_path(current_user), class: 'btn btn-success' %>
   </div>
 </div>
