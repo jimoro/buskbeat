@@ -3,7 +3,15 @@
 <div class="row">
   <div class="col-md-6">
 
-    <%= link_to image_tag(@profile.avatar.url(:medium)), @profile.avatar.url %>
+    <% if current_user.profile.avatar.file? %>
+      <%= image_tag current_user.profile.avatar.url(:medium) %>
+    <% else %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Edit your profile to add your profile image</h3>
+        </div>
+      </div>
+    <% end %>
 
     <div class="panel panel-default">
       <div class="panel-heading">
