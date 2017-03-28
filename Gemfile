@@ -23,6 +23,8 @@ gem 'omniauth-facebook'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

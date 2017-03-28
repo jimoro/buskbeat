@@ -40,12 +40,16 @@
         <h3 class="panel-title">Where to find '<%= @profile.act %>'</h3>
       </div>
       <div class="panel-body">
-        <p><em>Latitude:</em> <%= current_user[:lat].to_s %></p>
-        <%= puts "Latitude for #{current_user[:name]} is #{current_user[:lat]}" %>
-        <p><em>Longitude:</em> <%= current_user[:lng].to_s %></p>
-        <%= puts "Longitude for #{current_user[:name]} is #{current_user[:lng]}" %>
+        <p><em>Latitude:</em> <%= @profile.lat %></p>
+        <p><em>Longitude:</em> <%= @profile.lng %></p>
       </div>
-    </div>
+
+      <div class="panel-body">
+        <div id="map"></div>
+        <script src="profile.js" type="text/javascript"></script>
+      </div>
+
+      </div>
 
   </div>
 
