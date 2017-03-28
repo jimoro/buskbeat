@@ -17,3 +17,10 @@
 //= require_tree .
 
 
+$(document).ready(function() {
+  $('input#geocode').geocomplete({
+    map: '#map',
+    details: '.geo-details',
+    detailsAttribute: 'data-geo'
+  });
+});

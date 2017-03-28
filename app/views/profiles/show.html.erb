@@ -57,17 +57,17 @@
   </div>
 </div>
 
+
 <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: <%= @profile.lat %>, lng: <%= @profile.lng %> },
-          zoom: 10
-        });
-      }
-    </script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= @profile.lat %>, lng: <%= @profile.lng %> },
+      zoom: 10
+    });
+  }
+</script>
 
-    <!-- Google Maps JavaScript  -->
-    <script defer src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&v=3&callback=initMap"></script>
-
+<!-- Google Maps JavaScript  -->
+<script defer src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&v=3&callback=initMap"></script>
 
