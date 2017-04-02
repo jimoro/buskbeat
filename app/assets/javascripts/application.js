@@ -11,7 +11,22 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+$(function() {
+  $("#geocomplete").geocomplete();
+});
+
+
+$(document).ready(function() {
+  $('input#geocode').geocomplete({
+    map: '#map',
+    details: '.geo-details',
+    detailsAttribute: 'data-geo'
+  });
+});

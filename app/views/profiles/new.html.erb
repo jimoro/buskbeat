@@ -1,7 +1,6 @@
 <h2>Create Your Profile</h2>
 
 <div class="row">
-
   <div class="col-md-6">
     <%= form_for [current_user, @profile], url: user_profile_path, html: { multipart: true } do |f| %>
 
@@ -26,18 +25,14 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <div class="field">
-          <%= f.label :lat %>
-          <%= f.number_field :lat, class: :text_field, step: :any, placeholder: "Enter latitude" %>
-        </div>
-      </div>
+      <label>Enter your location</label>
+      <input type="text" name="location" id='geocode'>
+      <div id="map"></div>
 
-      <div class="form-group">
-        <div class="field">
-          <%= f.label :lng %>
-          <%= f.number_field :lng, class: :text_field, step: :any, placeholder: "Enter longitude" %>
-        </div>
+      <div class="geo-details">
+        <%= f.hidden_field :lat, data: { geo: 'lat' } %>
+        <%= f.hidden_field :lng, data: { geo: 'lng' } %>
+        <%= f.hidden_field :formatted_address, data: { geo: 'formatted_address' } %>
       </div>
 
       <%= f.submit 'Save' %>
@@ -46,3 +41,6 @@
 
   </div>
 </div>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=places"></script>
+<%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js' %>

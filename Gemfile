@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'figaro'
 
 # My additions
 gem 'devise'
@@ -25,6 +26,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
