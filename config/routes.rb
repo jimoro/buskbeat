@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resource :profile, only: [:create, :new, :update, :edit, :show]
-    resource :videos
+    resources :videos, only: [:create, :new, :update, :edit, :show]
   end
 
   resources :topics do
     resources :posts, except: [:index]  # This 'resources :<controller> syntax generates RESTful CRUD routes to create, update, view, and delete Post instances.
   end
+
 
   get 'about' => 'welcome#about'  # Replaces "get 'welcome/about' to shorter URI of '/about' while maintaining the controller#action relationship"
   get 'faq' => 'welcome#faq'
