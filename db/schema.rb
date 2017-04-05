@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331235745) do
+ActiveRecord::Schema.define(version: 20170405012216) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20170331235745) do
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid"], name: "index_users_on_uid"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "yt_content_id"
+    t.string   "uri"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
 end

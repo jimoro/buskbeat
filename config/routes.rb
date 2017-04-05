@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resource :profile, only: [:create, :new, :update, :edit, :show]
+    resource :videos
   end
 
   resources :topics do

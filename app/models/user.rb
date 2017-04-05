@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :posts
+  has_many :videos
   has_one :profile
 
   def self.from_omniauth(auth)
