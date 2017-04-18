@@ -6,4 +6,9 @@
       <%= link_to 'Add a video', new_user_video_path, class: 'btn btn-primary btn-lg' %>
     </p>
   </div>
+
+  <h2>User Videos</h2>
+  <% @videos.each do |video| %>
+    <%= embed_video_for(video.uri) %>
+  <% end %>
 </div>

@@ -9,7 +9,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(video_params)
+    @video = current_user.videos.new(video_params)
     if @video.save
       flash[:success] = 'Video added!'
       redirect_to user_profile_path(current_user)
@@ -17,6 +17,10 @@ class VideosController < ApplicationController
       flash.now[:alert] = "There was a problem creating the embedded video. Please try again."
       render :new
     end
+  end
+
+  def show
+    @video = Video.all
   end
 
 
