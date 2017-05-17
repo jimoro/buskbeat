@@ -13,6 +13,16 @@
   margin-top: 5px;
 }
 
+.jumbotron {
+
+  h1 {
+     text-shadow: 5px 3px #d7c9aa;
+     background-color: #efefef;
+     padding: 10px;
+  }
+}
+
+
 .mktg-points {
   height: 200px;
   border-style: solid;
@@ -44,7 +54,9 @@
 
 } //end of .mktg-points
 
-
+.home-features {
+  background-color: rgba(255, 255, 255, 0.85)
+}
 
 #map {
   height: 400px;
